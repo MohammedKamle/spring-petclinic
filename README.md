@@ -6,7 +6,7 @@
 
 [See the presentation here](https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application)
 
-## Run Petclinic locally
+## Run Petclinic in your local machine
 
 Spring Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/) or [Gradle](https://spring.io/guides/gs/gradle/). You can build a jar file and run it from the command line (it should work just as well with Java 17 or newer):
 
@@ -17,7 +17,7 @@ cd spring-petclinic
 java -jar target/*.jar
 ```
 
-(On Windows, or if your shell doesn't expand the glob, you might need to specify the JAR file name explicitly on the command line at the end there.)
+(On Windows, or if your shell doesn't expand  the glob, you might need to specify the JAR file name explicitly on the command line at the end there in .)
 
 You can then access the Petclinic at <http://localhost:8080/>.
 

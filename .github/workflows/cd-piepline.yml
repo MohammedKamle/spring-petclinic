@@ -26,7 +26,7 @@ jobs:
         run: docker build -t spring-petclinic .
 
       - name: Docker login to JFrog
-        run: echo "${{ secrets.JFROG_ACCESS_TOKEN }}" | docker login -u "mohammadk@lambdatest.com" trialxtslf6.jfrog.io --password-stdin
+        run: echo "${{ secrets.JFROG_ACCESS_TOKEN }}" | docker login -u "${{ secrets.JFROG_USERNAME }}" "${{ secrets.JFROG_REGISTRY }}" --password-stdin
 
       - name: Extract image details
         id: image-info
@@ -38,7 +38,7 @@ jobs:
           echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
 
       - name: Tag Docker image
-        run: docker tag $IMAGE_ID trialxtslf6.jfrog.io/mdk-docker-local/$IMAGE_NAME:${{ github.sha }}
+        run: docker tag $IMAGE_ID ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/$IMAGE_NAME:${{ github.sha }}
 
       - name: Push Docker image
-        run: docker push trialxtslf6.jfrog.io/mdk-docker-local/$IMAGE_NAME:${{ github.sha }}
+        run: docker push ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/$IMAGE_NAME:${{ github.sha }}

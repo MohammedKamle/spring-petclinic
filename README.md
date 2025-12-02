@@ -6,7 +6,7 @@ This repository demonstrates an end-to-end CI/CD pipeline for the Spring Pet Cli
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Prerequisites_1
 
 Ensure you have the following installed:
 
